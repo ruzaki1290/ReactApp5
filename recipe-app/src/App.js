@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
-import CreatePost from './components/CreatePost'; // Import with correct casing
+import CreatePost from './components/CreatePost';
 import PostList from './components/PostList';
-import About from './components/About'; // Import your About component
-
+import Post from './components/Post';
+import About from './components/About';
 
 function App() {
   return (
@@ -14,8 +14,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<PostList />} />
-          <Route path="/create-post" element={<CreatePost />} /> {/* Correct casing */}
-          <Route path="/about" element={<About />} />          {/* Add the about route */}
+          <Route path="/create-post" element={<CreatePost />} />
+          <Route path="/post/:id" element={<Post />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
     </div>
@@ -23,5 +24,3 @@ function App() {
 }
 
 export default App;
-
-
